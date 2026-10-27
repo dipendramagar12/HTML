@@ -1,0 +1,887 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --browser-dark: #20223b;
+    --border: #dfe1e6;
+    --text: #242424;
+    --muted: #777b82;
+    --red: #f00020;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #e8e8e8;
+}
+
+body {
+    padding: 5px;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.browser-window {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 640px;
+    height: calc(100vh - 10px);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #f8f8f8;
+    border-radius: 10px;
+    border: 1px solid #c9cbd0;
+}
+
+/* Top title bar */
+
+.title-bar {
+    height: 40px;
+    display: flex;
+    align-items: stretch;
+    gap: 3px;
+    padding: 0 5px 0 38px;
+    background: var(--browser-dark);
+    color: #f5f5f5;
+    overflow: hidden;
+}
+
+.title-tab {
+    height: 35px;
+    margin-top: 5px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    flex: 1 1 0;
+    border-radius: 7px 7px 0 0;
+    background: #292b43;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.title-tab:first-child {
+    flex: 1.2 1 0;
+}
+
+.title-tab.active-tab {
+    background: #f8f8f8;
+    color: #222;
+    border-bottom: 2px solid #1688e8;
+}
+
+.mini-logo,
+.firefox-logo {
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.tab-close {
+    margin-left: auto;
+    color: #bfc1ce;
+    font-size: 18px;
+}
+
+.active-tab .tab-close {
+    color: #555;
+}
+
+.new-tab {
+    align-self: center;
+    flex-shrink: 0;
+    width: 31px;
+    height: 29px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    line-height: 20px;
+}
+
+.new-tab:hover {
+    background: #3c3e56;
+}
+
+.window-buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-left: 12px;
+    color: #d7d8e0;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+/* Navigation toolbar */
+
+.navigation-bar {
+    height: 39px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 3px 10px;
+    background: #fff;
+    border-bottom: 1px solid #d5d8df;
+}
+
+.navigation-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.nav-button {
+    width: 27px;
+    height: 27px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    color: #555;
+    font-size: 22px;
+}
+
+.nav-button:hover {
+    background: #eeeeef;
+}
+
+.nav-button.forward {
+    color: #aaa;
+}
+
+.home-button {
+    position: relative;
+    width: 30px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+    margin-left: 8px;
+    border: 1px solid #cfd2d8;
+    border-radius: 4px;
+    background: white;
+    color: #333;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.home-button:hover {
+    background: #edf3fa;
+}
+
+.address-bar {
+    flex: 1;
+    min-width: 0;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    border: 1px solid #b8c0cc;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 1px #f5f6f8;
+    background: #fff;
+    color: #727781;
+    font-size: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.search-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    border: 2px solid #87909b;
+    border-radius: 50%;
+    position: relative;
+}
+
+.search-icon::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 2px;
+    right: -5px;
+    bottom: -2px;
+    transform: rotate(45deg);
+    background: #87909b;
+}
+
+.toolbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #535760;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.blue-icon {
+    color: #1689e8;
+}
+
+/* Getting Started row */
+
+.getting-started {
+    height: 29px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 15px;
+    background: #fff;
+    font-size: 12px;
+    color: #414141;
+}
+
+.small-firefox {
+    font-size: 13px;
+}
+
+/* Main content */
+
+.page-content {
+    height: calc(100% - 108px);
+    overflow-y: auto;
+    padding: 27px 14.3% 25px;
+    background: #f9f9f9;
+}
+
+.search-box {
+    width: 100%;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 0 15px;
+    background: white;
+    border: 1px solid #dedfe3;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    margin-bottom: 37px;
+}
+
+.google-logo {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #4285f4;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: #555;
+}
+
+.settings-icon {
+    font-size: 20px;
+    color: #444;
+    margin-left: auto;
+}
+
+/* Section headings */
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 12px;
+    color: #686b73;
+    font-size: 13px;
+}
+
+.grid-icon {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.dropdown {
+    font-size: 17px;
+}
+
+/* Top Sites */
+
+.top-sites {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.site {
+    min-width: 0;
+    text-align: center;
+}
+
+.site-image {
+    width: 100%;
+    height: 90px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.site:hover .site-image {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.site-name {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 11px;
+}
+
+/* Amazon thumbnail */
+
+.amazon {
+    background: #fff;
+}
+
+.amazon-letter {
+    position: absolute;
+    top: -7px;
+    left: 20%;
+    font-size: 82px;
+    font-weight: bold;
+    line-height: 1;
+    color: #171717;
+}
+
+.amazon-smile {
+    position: absolute;
+    left: 18%;
+    bottom: 1px;
+    color: #f2a000;
+    font-size: 55px;
+    transform: rotate(-5deg);
+}
+
+.search-badge {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #1479ed;
+    color: white;
+    font-size: 30px;
+}
+
+/* Small website preview cards */
+
+.fake-browser {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+    background: white;
+    color: #555;
+    text-align: left;
+    font-size: 6px;
+}
+
+.fake-header {
+    display: block;
+    padding: 4px;
+    background: #353535;
+    color: white;
+}
+
+.fake-browser p {
+    margin: 5px 0;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 3px;
+}
+
+.fake-picture {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    background: #efc7b6;
+    border-radius: 50%;
+}
+
+.ftp .fake-browser {
+    font-size: 7px;
+}
+
+.ftp strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.ladybug {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 23px;
+}
+
+/* GitHub thumbnail */
+
+.github {
+    background: #fff;
+}
+
+.github-mark {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #25262a;
+    color: #25262a;
+    font-size: 1px;
+}
+
+.github-mark::before {
+    content: "";
+    width: 37px;
+    height: 37px;
+    background: white;
+    border-radius: 50%;
+}
+
+.github-eyes {
+    position: absolute;
+    top: 30px;
+    color: white;
+    font-size: 38px;
+}
+
+/* Add-ons thumbnail */
+
+.addons {
+    display: block;
+    background: #fff;
+}
+
+.addon-header {
+    padding: 8px 3px;
+    background: #30203e;
+    color: white;
+    text-align: left;
+    font-size: 8px;
+}
+
+.addon-content {
+    padding: 10px 5px;
+    text-align: left;
+    font-size: 8px;
+}
+
+.addon-content p {
+    font-size: 6px;
+    color: #777;
+}
+
+.puzzle {
+    position: absolute;
+    right: 3px;
+    bottom: 0;
+    color: #18a8c9;
+    font-size: 35px;
+}
+
+/* Skype thumbnail */
+
+.skype {
+    background: #fff;
+}
+
+.web-letter {
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    padding: 8px;
+    border: 1px solid #eee;
+    background: white;
+    color: #999;
+    font-size: 19px;
+}
+
+/* Highlights */
+
+.highlights-section {
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.highlight-card {
+    height: 112px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    background: white;
+}
+
+.firefox-card {
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 60% 100%, #15132e 0 45%, transparent 46%),
+                linear-gradient(140deg, #b51cff, #5424a7);
+}
+
+.firefox-art {
+    font-size: 48px;
+}
+
+.article-card {
+    padding: 8px;
+    background: #fff;
+}
+
+.article-top {
+    font-size: 7px;
+    color: #b22d36;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.article-lines {
+    height: 65px;
+    margin-top: 6px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #e2e2e2 0 2px,
+        transparent 2px 8px
+    );
+}
+
+.settings-card {
+    padding: 8px;
+    background: #fff;
+}
+
+.settings-top {
+    padding: 5px;
+    background: #e6e9ed;
+    font-size: 7px;
+}
+
+.settings-lines {
+    margin-top: 8px;
+    height: 55px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #d9dce1 0 2px,
+        transparent 2px 9px
+    );
+}
+
+.color-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: linear-gradient(135deg, #9d7bfa, #ff8b9a);
+    color: white;
+    font-size: 9px;
+}
+
+.color-icon {
+    font-size: 28px;
+}
+
+.clock {
+    position: absolute;
+    right: 5px;
+    bottom: 4px;
+    width: 19px;
+    height: 19px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: white;
+    color: #888;
+    font-size: 18px;
+}
+
+/* Firefox message footer */
+
+.messages-area {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 83px;
+    padding: 10px 10%;
+    background: #fff;
+    border-top: 1px solid #eeeeee;
+}
+
+.message-heading {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
+    color: #737780;
+    font-size: 12px;
+}
+
+.message-symbol {
+    font-size: 18px;
+}
+
+.message-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.message-logo {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #ef4057;
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.message-content p {
+    flex: 1;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.pocket-button {
+    flex-shrink: 0;
+    padding: 10px 15px;
+    border: none;
+    background: #e9e9e9;
+    color: #222;
+    font-size: 12px;
+}
+
+.pocket-button:hover {
+    background: #d9d9d9;
+}
+
+/* Red annotations */
+
+.annotation {
+    position: absolute;
+    z-index: 5;
+    color: #111;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.08;
+    pointer-events: none;
+}
+
+.home-annotation {
+    top: 170px;
+    left: 14px;
+}
+
+.newtab-annotation {
+    top: 128px;
+    right: 13%;
+}
+
+.annotation-arrows {
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Responsive layout */
+
+@media (max-width: 850px) {
+    .title-bar {
+        padding-left: 8px;
+    }
+
+    .window-buttons {
+        gap: 10px;
+    }
+
+    .toolbar-icons {
+        gap: 7px;
+    }
+
+    .page-content {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .top-sites {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .highlights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .newtab-annotation {
+        right: 5%;
+    }
+
+    .annotation {
+        font-size: 13px;
+    }
+
+    .messages-area {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 0;
+    }
+
+    .browser-window {
+        min-height: 100vh;
+        height: auto;
+        border-radius: 0;
+        padding-bottom: 15px;
+    }
+
+    .title-tab {
+        font-size: 9px;
+        padding: 0 4px;
+    }
+
+    .title-tab:first-child {
+        display: none;
+    }
+
+    .window-buttons {
+        display: none;
+    }
+
+    .navigation-bar {
+        gap: 5px;
+        padding: 3px 5px;
+    }
+
+    .navigation-buttons {
+        gap: 0;
+    }
+
+    .nav-button {
+        width: 23px;
+        font-size: 18px;
+    }
+
+    .home-button {
+        margin-left: 3px;
+        width: 25px;
+    }
+
+    .toolbar-icons {
+        display: none;
+    }
+
+    .page-content {
+        height: auto;
+        padding: 25px 14px;
+    }
+
+    .search-box {
+        margin-bottom: 30px;
+    }
+
+    .top-sites {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .site-image {
+        height: 75px;
+    }
+
+    .highlights-grid {
+        gap: 12px;
+    }
+
+    .highlight-card {
+        height: 100px;
+    }
+
+    .messages-area {
+        position: relative;
+        padding: 12px;
+    }
+
+    .message-content {
+        flex-wrap: wrap;
+    }
+
+    .message-content p {
+        min-width: 150px;
+    }
+
+    .pocket-button {
+        margin-left: 48px;
+    }
+
+    .annotation {
+        display: none;
+    }
+
+    .annotation-arrows {
+        display: none;
+    }
+}

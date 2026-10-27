@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefox New Tab Mockup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="browser-window">
+
+        <!-- Browser title bar -->
+        <header class="title-bar">
+            <div class="title-tab">
+                <span class="mini-logo">🌐</span>
+                Homepage | gHacks Technologies
+                <span class="tab-close">×</span>
+            </div>
+
+            <div class="title-tab">
+                Advanced Preferences
+                <span class="tab-close">×</span>
+            </div>
+
+            <div class="title-tab active-tab">
+                <span class="firefox-logo">🦊</span>
+                New Tab
+                <span class="tab-close">×</span>
+            </div>
+
+            <button class="new-tab" aria-label="New tab">+</button>
+
+            <div class="window-buttons">
+                <span>−</span>
+                <span>□</span>
+                <span>×</span>
+            </div>
+        </header>
+
+        <!-- Navigation toolbar -->
+        <div class="navigation-bar">
+            <div class="navigation-buttons">
+                <button class="nav-button">←</button>
+                <button class="nav-button forward">→</button>
+                <button class="nav-button">⟳</button>
+
+                <button class="home-button" aria-label="Home">⌂</button>
+            </div>
+
+            <div class="address-bar">
+                <span class="search-icon"></span>
+                <span>Search with Google or enter address</span>
+            </div>
+
+            <div class="toolbar-icons">
+                <span>▥</span>
+                <span>▣</span>
+                <span>☻</span>
+                <span class="blue-icon">▣</span>
+                <span>♟</span>
+                <span>☷</span>
+                <span class="menu-icon">☰</span>
+            </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="getting-started">
+            <span class="small-firefox">🦊</span>
+            Getting Started
+        </div>
+
+        <!-- Main page -->
+        <main class="page-content">
+
+            <div class="search-box">
+                <span class="google-logo">G</span>
+                <input type="text" placeholder="Search the Web"
+                    aria-label="Search the Web">
+                <span class="settings-icon">⚙</span>
+            </div>
+
+            <!-- Top Sites -->
+            <section class="section top-section">
+                <div class="section-heading">
+                    <span class="grid-icon">▦</span>
+                    <span>Top Sites</span>
+                    <span class="dropdown">⌄</span>
+                </div>
+
+                <div class="top-sites">
+
+                    <div class="site">
+                        <div class="site-image amazon">
+                            <span class="amazon-letter">a</span>
+                            <span class="amazon-smile">⌣</span>
+                            <span class="search-badge">⌕</span>
+                        </div>
+                        <span class="site-name">★ &nbsp;@amazon</span>
+                    </div>
+
+                    <div class="site">
+                        <div class="site-image ghacks">
+                            <div class="fake-browser">
+                                <span class="fake-header">● ghacks.net</span>
+                                <p>Latest technology news and articles</p>
+                                <p>Reviews, tutorials and tips</p>
+                                <div class="fake-picture"></div>
+                            </div>
+                        </div>
+                        <span class="site-name">ghacks</span>
+                    </div>
+
+                    <div class="site">
+                        <div class="site-image ftp">
+                            <div class="fake-browser">
+                                <strong>Index of /</strong>
+                                <p>Parent Directory</p>
+                                <p>mozilla files</p>
+                                <span class="ladybug">🐞</span>
+                            </div>
+                        </div>
+                        <span class="site-name">ftp.mozilla</span>
+                    </div>
+
+                    <div class="site">
+                        <div class="site-image github">
+                            <span class="github-mark">●</span>
+                            <span class="github-eyes">⌒</span>
+                        </div>
+                        <span class="site-name">github</span>
+                    </div>
+
+                    <div class="site">
+                        <div class="site-image addons">
+                            <div class="addon-header">ADD-ONS</div>
+                            <div class="addon-content">
+                                <strong>AutoPause</strong>
+                                <p>Manage your extensions</p>
+                            </div>
+                            <span class="puzzle">✥</span>
+                        </div>
+                        <span class="site-name">addons.mozilla</span>
+                    </div>
+
+                    <div class="site">
+                        <div class="site-image skype">
+                            <span class="web-letter">W</span>
+                        </div>
+                        <span class="site-name">web.skype</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Highlights -->
+            <section class="section highlights-section">
+                <div class="section-heading">
+                    <span>✧</span>
+                    <span>Highlights</span>
+                    <span class="dropdown">⌄</span>
+                </div>
+
+                <div class="highlights-grid">
+
+                    <div class="highlight-card firefox-card">
+                        <div class="firefox-art">🦊</div>
+                        <span class="clock">◷</span>
+                    </div>
+
+                    <div class="highlight-card article-card">
+                        <div class="article-top">MOZILLA</div>
+                        <div class="article-lines"></div>
+                        <span class="clock">◷</span>
+                    </div>
+
+                    <div class="highlight-card settings-card">
+                        <div class="settings-top">Web Tab — Settings</div>
+                        <div class="settings-lines"></div>
+                        <span class="clock">◷</span>
+                    </div>
+
+                    <div class="highlight-card color-card">
+                        <span class="color-icon">▧</span>
+                        <strong>Browse in Style</strong>
+                        <span>Firefox Color</span>
+                        <span class="clock">◷</span>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Bottom message -->
+        <footer class="messages-area">
+            <div class="message-heading">
+                <span class="message-symbol">◴</span>
+                <strong>Messages from Firefox</strong>
+            </div>
+
+            <div class="message-content">
+                <span class="message-logo">✓</span>
+                <p>
+                    Street names. They can be problematic, perplexing, or just
+                    plain funny (looking at you, North Piddle Lane). Start your
+                    street-history lesson here.
+                </p>
+                <button class="pocket-button">Read the Pocket Collection</button>
+            </div>
+        </footer>
+
+        <!-- Explanatory annotations -->
+        <div class="annotation home-annotation">
+            <span>The Homepage<br>button of the<br>Firefox browser</span>
+        </div>
+
+        <div class="annotation newtab-annotation">
+            <span>The New Tab<br>Page button of<br>the Firefox<br>browser</span>
+        </div>
+
+        <!-- Red arrows -->
+        <svg class="annotation-arrows"
+             viewBox="0 0 936 647"
+             preserveAspectRatio="none"
+             aria-hidden="true">
+            <defs>
+                <marker id="arrowhead"
+                        markerWidth="10"
+                        markerHeight="10"
+                        refX="7"
+                        refY="3"
+                        orient="auto">
+                    <path d="M0,0 L0,6 L8,3 Z" fill="#f00020"/>
+                </marker>
+            </defs>
+
+            <path d="M 55 174 L 127 50"
+                  fill="none"
+                  stroke="#f00020"
+                  stroke-width="5"
+                  marker-end="url(#arrowhead)"/>
+
+            <path d="M 769 129 L 680 44"
+                  fill="none"
+                  stroke="#f00020"
+                  stroke-width="5"
+                  marker-end="url(#arrowhead)"/>
+        </svg>
+
+    </div>
+
+</body>
+</html>
